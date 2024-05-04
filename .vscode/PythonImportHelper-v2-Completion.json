@@ -1,0 +1,182 @@
+[
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "selenium.webdriver.chrome.service",
+        "description": "selenium.webdriver.chrome.service",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.service",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "selenium.webdriver.chrome.service",
+        "description": "selenium.webdriver.chrome.service",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.service",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "selenium.webdriver.chrome.service",
+        "description": "selenium.webdriver.chrome.service",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.service",
+        "documentation": {}
+    },
+    {
+        "label": "ChromeDriverManager",
+        "importPath": "webdriver_manager.chrome",
+        "description": "webdriver_manager.chrome",
+        "isExtraImport": true,
+        "detail": "webdriver_manager.chrome",
+        "documentation": {}
+    },
+    {
+        "label": "ChromeDriverManager",
+        "importPath": "webdriver_manager.chrome",
+        "description": "webdriver_manager.chrome",
+        "isExtraImport": true,
+        "detail": "webdriver_manager.chrome",
+        "documentation": {}
+    },
+    {
+        "label": "ChromeDriverManager",
+        "importPath": "webdriver_manager.chrome",
+        "description": "webdriver_manager.chrome",
+        "isExtraImport": true,
+        "detail": "webdriver_manager.chrome",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "option",
+        "kind": 5,
+        "importPath": "laptopData",
+        "description": "laptopData",
+        "peekOfCode": "option = webdriver.ChromeOptions()\n#option.add_argument(\"--headless\")\ndriver = webdriver.Chrome(service=Service(\n    ChromeDriverManager().install()), options=option)\ndata = []\ncount = 1\nwith open('laptopUrls.txt', 'r') as file:\n    for url in file:\n        driver.get(url.strip())\n        #time.sleep(1)",
+        "detail": "laptopData",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "laptopData",
+        "description": "laptopData",
+        "peekOfCode": "driver = webdriver.Chrome(service=Service(\n    ChromeDriverManager().install()), options=option)\ndata = []\ncount = 1\nwith open('laptopUrls.txt', 'r') as file:\n    for url in file:\n        driver.get(url.strip())\n        #time.sleep(1)\n        title = driver.find_element('xpath', '//h1[@class=\"product-name\"]').text\n        #print(title)",
+        "detail": "laptopData",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "laptopData",
+        "description": "laptopData",
+        "peekOfCode": "data = []\ncount = 1\nwith open('laptopUrls.txt', 'r') as file:\n    for url in file:\n        driver.get(url.strip())\n        #time.sleep(1)\n        title = driver.find_element('xpath', '//h1[@class=\"product-name\"]').text\n        #print(title)\n        sys.stdout.reconfigure(encoding='utf-8')\n        price = driver.find_element(",
+        "detail": "laptopData",
+        "documentation": {}
+    },
+    {
+        "label": "count",
+        "kind": 5,
+        "importPath": "laptopData",
+        "description": "laptopData",
+        "peekOfCode": "count = 1\nwith open('laptopUrls.txt', 'r') as file:\n    for url in file:\n        driver.get(url.strip())\n        #time.sleep(1)\n        title = driver.find_element('xpath', '//h1[@class=\"product-name\"]').text\n        #print(title)\n        sys.stdout.reconfigure(encoding='utf-8')\n        price = driver.find_element(\n            'xpath', '//td[@class=\"product-info-data product-price\"]').text",
+        "detail": "laptopData",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "laptopData",
+        "description": "laptopData",
+        "peekOfCode": "df = pd.DataFrame(data)\ndf.to_csv(\"StarTechLaptopSeleniumData.csv\", index=False)",
+        "detail": "laptopData",
+        "documentation": {}
+    },
+    {
+        "label": "option",
+        "kind": 5,
+        "importPath": "laptopUrls",
+        "description": "laptopUrls",
+        "peekOfCode": "option = webdriver.ChromeOptions()\ndriver = webdriver.Chrome(service=Service(\n    ChromeDriverManager().install()), options=option)\nfor page in range(1, 10):\n    url = f\"https://www.startech.com.bd/laptop-notebook/laptop?limit=90&page={page}\"\n    driver.get(url)\n    time.sleep(2)\n    urls = driver.find_elements('xpath', '//div[@class=\"p-item-img\"]//a')\n    with open('laptopUrls.txt', 'a') as file:\n        for url in urls:",
+        "detail": "laptopUrls",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "laptopUrls",
+        "description": "laptopUrls",
+        "peekOfCode": "driver = webdriver.Chrome(service=Service(\n    ChromeDriverManager().install()), options=option)\nfor page in range(1, 10):\n    url = f\"https://www.startech.com.bd/laptop-notebook/laptop?limit=90&page={page}\"\n    driver.get(url)\n    time.sleep(2)\n    urls = driver.find_elements('xpath', '//div[@class=\"p-item-img\"]//a')\n    with open('laptopUrls.txt', 'a') as file:\n        for url in urls:\n            file.write(url.get_attribute('href') + '\\n')",
+        "detail": "laptopUrls",
+        "documentation": {}
+    },
+    {
+        "label": "option",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "option = webdriver.ChromeOptions()\noption.add_argument(\"--headless\")\ndriver = webdriver.Chrome(service=Service(\n    ChromeDriverManager().install()), options=option)\nwith open('laptopUrls.txt', 'r') as file:\n    for url in file:\n        driver.get(url.strip())\n        time.sleep(1)\n        title = driver.find_element(\n            'xpath', '//h1[@class=\"product-name\"]').text",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "driver = webdriver.Chrome(service=Service(\n    ChromeDriverManager().install()), options=option)\nwith open('laptopUrls.txt', 'r') as file:\n    for url in file:\n        driver.get(url.strip())\n        time.sleep(1)\n        title = driver.find_element(\n            'xpath', '//h1[@class=\"product-name\"]').text\n        # print(title)\n        sys.stdout.reconfigure(encoding='utf-8')",
+        "detail": "test",
+        "documentation": {}
+    }
+]
